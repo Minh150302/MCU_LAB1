@@ -1,5 +1,5 @@
 main.c:52:6:setNumberOnClock	24	static
-main.c:249:5:main	104	static
-main.c:310:6:SystemClock_Config	72	static
-main.c:346:13:MX_GPIO_Init	32	static
-main.c:379:6:Error_Handler	4	static,ignoring_inline_asm
+main.c:137:5:main	104	static
+main.c:198:6:SystemClock_Config	72	static
+main.c:234:13:MX_GPIO_Init	32	static
+main.c:267:6:Error_Handler	4	static,ignoring_inline_asm
