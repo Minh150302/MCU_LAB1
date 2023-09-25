@@ -193,20 +193,20 @@ Disassembly of section .text:
  8000218:	d874      	bhi.n	8000304 <clearNumberOnClock+0x100>
  800021a:	a201      	add	r2, pc, #4	; (adr r2, 8000220 <clearNumberOnClock+0x1c>)
  800021c:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
- 8000220:	080002f5 	.word	0x080002f5
- 8000224:	08000251 	.word	0x08000251
- 8000228:	0800025f 	.word	0x0800025f
- 800022c:	0800026d 	.word	0x0800026d
- 8000230:	0800027b 	.word	0x0800027b
- 8000234:	08000289 	.word	0x08000289
- 8000238:	08000297 	.word	0x08000297
- 800023c:	080002a5 	.word	0x080002a5
- 8000240:	080002b5 	.word	0x080002b5
- 8000244:	080002c5 	.word	0x080002c5
- 8000248:	080002d5 	.word	0x080002d5
- 800024c:	080002e5 	.word	0x080002e5
+ 8000220:	08000251 	.word	0x08000251
+ 8000224:	0800025f 	.word	0x0800025f
+ 8000228:	0800026d 	.word	0x0800026d
+ 800022c:	0800027b 	.word	0x0800027b
+ 8000230:	08000289 	.word	0x08000289
+ 8000234:	08000297 	.word	0x08000297
+ 8000238:	080002a5 	.word	0x080002a5
+ 800023c:	080002b5 	.word	0x080002b5
+ 8000240:	080002c5 	.word	0x080002c5
+ 8000244:	080002d5 	.word	0x080002d5
+ 8000248:	080002e5 	.word	0x080002e5
+ 800024c:	080002f5 	.word	0x080002f5
 	switch(counter){
-	case 1:
+	case 0:
 		HAL_GPIO_WritePin(C1_GPIO_Post, C1_GPIO_Pin, RESET);
  8000250:	88fb      	ldrh	r3, [r7, #6]
  8000252:	2200      	movs	r2, #0
@@ -215,7 +215,7 @@ Disassembly of section .text:
  8000258:	f000 fcc2 	bl	8000be0 <HAL_GPIO_WritePin>
 		break;
  800025c:	e053      	b.n	8000306 <clearNumberOnClock+0x102>
-	case 2:
+	case 1:
 		HAL_GPIO_WritePin(C2_GPIO_Post, C2_GPIO_Pin,RESET);
  800025e:	8b3b      	ldrh	r3, [r7, #24]
  8000260:	2200      	movs	r2, #0
@@ -224,7 +224,7 @@ Disassembly of section .text:
  8000266:	f000 fcbb 	bl	8000be0 <HAL_GPIO_WritePin>
 		break;
  800026a:	e04c      	b.n	8000306 <clearNumberOnClock+0x102>
-	case 3:
+	case 2:
 		HAL_GPIO_WritePin(C3_GPIO_Post, C3_GPIO_Pin, RESET);
  800026c:	8c3b      	ldrh	r3, [r7, #32]
  800026e:	2200      	movs	r2, #0
@@ -233,7 +233,7 @@ Disassembly of section .text:
  8000274:	f000 fcb4 	bl	8000be0 <HAL_GPIO_WritePin>
 		break;
  8000278:	e045      	b.n	8000306 <clearNumberOnClock+0x102>
-	case 4:
+	case 3:
 		HAL_GPIO_WritePin(C4_GPIO_Post, C4_GPIO_Pin,RESET);
  800027a:	8d3b      	ldrh	r3, [r7, #40]	; 0x28
  800027c:	2200      	movs	r2, #0
@@ -242,7 +242,7 @@ Disassembly of section .text:
  8000282:	f000 fcad 	bl	8000be0 <HAL_GPIO_WritePin>
 		break;
  8000286:	e03e      	b.n	8000306 <clearNumberOnClock+0x102>
-	case 5:
+	case 4:
 		HAL_GPIO_WritePin(C5_GPIO_Post, C5_GPIO_Pin, RESET);
  8000288:	8e3b      	ldrh	r3, [r7, #48]	; 0x30
  800028a:	2200      	movs	r2, #0
@@ -251,7 +251,7 @@ Disassembly of section .text:
  8000290:	f000 fca6 	bl	8000be0 <HAL_GPIO_WritePin>
 		break;
  8000294:	e037      	b.n	8000306 <clearNumberOnClock+0x102>
-	case 6:
+	case 5:
 		HAL_GPIO_WritePin(C6_GPIO_Post, C6_GPIO_Pin, RESET);
  8000296:	8f3b      	ldrh	r3, [r7, #56]	; 0x38
  8000298:	2200      	movs	r2, #0
@@ -260,7 +260,7 @@ Disassembly of section .text:
  800029e:	f000 fc9f 	bl	8000be0 <HAL_GPIO_WritePin>
 		break;
  80002a2:	e030      	b.n	8000306 <clearNumberOnClock+0x102>
-	case 7:
+	case 6:
 		HAL_GPIO_WritePin(C7_GPIO_Post, C7_GPIO_Pin, RESET);
  80002a4:	f8b7 3040 	ldrh.w	r3, [r7, #64]	; 0x40
  80002a8:	2200      	movs	r2, #0
@@ -269,7 +269,7 @@ Disassembly of section .text:
  80002ae:	f000 fc97 	bl	8000be0 <HAL_GPIO_WritePin>
 		break;
  80002b2:	e028      	b.n	8000306 <clearNumberOnClock+0x102>
-	case 8:
+	case 7:
 		HAL_GPIO_WritePin(C8_GPIO_Post, C8_GPIO_Pin, RESET);
  80002b4:	f8b7 3048 	ldrh.w	r3, [r7, #72]	; 0x48
  80002b8:	2200      	movs	r2, #0
@@ -278,7 +278,7 @@ Disassembly of section .text:
  80002be:	f000 fc8f 	bl	8000be0 <HAL_GPIO_WritePin>
 		break;
  80002c2:	e020      	b.n	8000306 <clearNumberOnClock+0x102>
-	case 9:
+	case 8:
 		HAL_GPIO_WritePin(C9_GPIO_Post, C9_GPIO_Pin, RESET);
  80002c4:	f8b7 3050 	ldrh.w	r3, [r7, #80]	; 0x50
  80002c8:	2200      	movs	r2, #0
@@ -287,7 +287,7 @@ Disassembly of section .text:
  80002ce:	f000 fc87 	bl	8000be0 <HAL_GPIO_WritePin>
 		break;
  80002d2:	e018      	b.n	8000306 <clearNumberOnClock+0x102>
-	case 10:
+	case 9:
 		HAL_GPIO_WritePin(C10_GPIO_Post, C10_GPIO_Pin, RESET);
  80002d4:	f8b7 3058 	ldrh.w	r3, [r7, #88]	; 0x58
  80002d8:	2200      	movs	r2, #0
@@ -296,7 +296,7 @@ Disassembly of section .text:
  80002de:	f000 fc7f 	bl	8000be0 <HAL_GPIO_WritePin>
 		break;
  80002e2:	e010      	b.n	8000306 <clearNumberOnClock+0x102>
-	case 11:
+	case 10:
 		HAL_GPIO_WritePin(C11_GPIO_Post, C11_GPIO_Pin, RESET);
  80002e4:	f8b7 3060 	ldrh.w	r3, [r7, #96]	; 0x60
  80002e8:	2200      	movs	r2, #0
@@ -305,7 +305,7 @@ Disassembly of section .text:
  80002ee:	f000 fc77 	bl	8000be0 <HAL_GPIO_WritePin>
 		break;
  80002f2:	e008      	b.n	8000306 <clearNumberOnClock+0x102>
-	case 0:
+	case 11:
 		HAL_GPIO_WritePin(C12_GPIO_Post, C12_GPIO_Pin, RESET);
  80002f4:	f8b7 3068 	ldrh.w	r3, [r7, #104]	; 0x68
  80002f8:	2200      	movs	r2, #0
