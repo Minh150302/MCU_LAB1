@@ -152,7 +152,7 @@ int main(void)
 				  LED_YELLOW_V_GPIO_Port, LED_YELLOW_V_Pin,
 				  LED_GREEN_V_GPIO_Port, LED_GREEN_V_Pin);
 	  }
-	  else if(counter < 10){
+	  else if(counter < 9){
 		  YELLOW_LIGHT(
 				  LED_RED_H_GPIO_Port, LED_RED_H_Pin,
 				  LED_YELLOW_H_GPIO_Port, LED_YELLOW_H_Pin,
@@ -161,7 +161,6 @@ int main(void)
 				  LED_RED_V_GPIO_Port, LED_RED_V_Pin,
 				  LED_YELLOW_V_GPIO_Port, LED_YELLOW_V_Pin,
 				  LED_GREEN_V_GPIO_Port, LED_GREEN_V_Pin);
-		  if (counter == 9) counter = 0;
 	  }
 	  else counter = 0;
 
