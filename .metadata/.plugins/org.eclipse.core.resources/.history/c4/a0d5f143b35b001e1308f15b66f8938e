@@ -373,7 +373,7 @@ int main(void)
 		  				  				  	F_seg_GPIO_Port, F_seg_Pin,
 		  				  				  	G_seg_GPIO_Port, G_seg_Pin
 		  				  				  				  	  );
-		  		if (counter == 10) counter = 0;
+		  		if (counter == 10) counter = 1;
 	  }
 
 
@@ -422,7 +422,7 @@ int main(void)
 			  	  			F_seg2_GPIO_Port, F_seg2_Pin,
 			  	  			G_seg2_GPIO_Port, G_seg2_Pin
 		  				  );
-		  if (counter_2 == 10) counter_2 = 0;
+		  if (counter_2 == 10) counter_2 = 1;
 	  }
 
 

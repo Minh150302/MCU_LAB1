@@ -893,11 +893,11 @@ int main(void)
 		  				  				  	F_seg_GPIO_Port, F_seg_Pin,
 		  				  				  	G_seg_GPIO_Port, G_seg_Pin
 		  				  				  				  	  );
-		  		if (counter_2 == 10) counter = 1;
- 80006f0:	683b      	ldr	r3, [r7, #0]
+		  		if (counter == 10) counter = 0;
+ 80006f0:	687b      	ldr	r3, [r7, #4]
  80006f2:	2b0a      	cmp	r3, #10
  80006f4:	d101      	bne.n	80006fa <main+0x12a>
- 80006f6:	2301      	movs	r3, #1
+ 80006f6:	2300      	movs	r3, #0
  80006f8:	607b      	str	r3, [r7, #4]
 	  }
 
@@ -1058,12 +1058,12 @@ int main(void)
 			  	  			F_seg2_GPIO_Port, F_seg2_Pin,
 			  	  			G_seg2_GPIO_Port, G_seg2_Pin
 		  				  );
-		  if (counter_2 == 10) counter = 1;
+		  if (counter_2 == 10) counter_2 = 0;
  8000824:	683b      	ldr	r3, [r7, #0]
  8000826:	2b0a      	cmp	r3, #10
  8000828:	d101      	bne.n	800082e <main+0x25e>
- 800082a:	2301      	movs	r3, #1
- 800082c:	607b      	str	r3, [r7, #4]
+ 800082a:	2300      	movs	r3, #0
+ 800082c:	603b      	str	r3, [r7, #0]
 	  }
 
 
