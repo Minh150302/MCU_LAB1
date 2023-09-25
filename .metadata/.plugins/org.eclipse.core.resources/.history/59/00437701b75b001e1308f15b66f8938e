@@ -276,10 +276,10 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int counter = 0;
+  int counter = -1;
   while (1)
   {
-	  if (counter >= 13) counter = 0;
+	  if (counter >= 13) counter = -1;
 	  clock_sec(counter ++,
 				C1_GPIO_Port, C1_Pin,
 				C2_GPIO_Port, C2_Pin,
