@@ -180,7 +180,7 @@ int main(void)
   int counter = 0;
   while (1)
   {
-	  clockSetAll(
+	  if (counter == 0 ) clockSetAll(
 	  	  	  	C1_GPIO_Port, C1_Pin,
   				C2_GPIO_Port, C2_Pin,
   				C3_GPIO_Port, C3_Pin,

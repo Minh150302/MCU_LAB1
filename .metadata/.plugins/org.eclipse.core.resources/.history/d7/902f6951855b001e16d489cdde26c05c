@@ -94,40 +94,40 @@ void clearNumberOnClock(int counter,
 		){
 	switch(counter){
 	case 1:
-		HAL_GPIO_WritePin(C1_GPIO_Post, C1_GPIO_Pin, RESET);
+		HAL_GPIO_WritePin(C1_GPIO_Post, C1_GPIO_Pin, SET);
 		break;
 	case 2:
-		HAL_GPIO_WritePin(C2_GPIO_Post, C2_GPIO_Pin,RESET);
+		HAL_GPIO_WritePin(C2_GPIO_Post, C2_GPIO_Pin,SET);
 		break;
 	case 3:
-		HAL_GPIO_WritePin(C3_GPIO_Post, C3_GPIO_Pin, RESET);
+		HAL_GPIO_WritePin(C3_GPIO_Post, C3_GPIO_Pin, SET);
 		break;
 	case 4:
-		HAL_GPIO_WritePin(C4_GPIO_Post, C4_GPIO_Pin,RESET);
+		HAL_GPIO_WritePin(C4_GPIO_Post, C4_GPIO_Pin,SET);
 		break;
 	case 5:
-		HAL_GPIO_WritePin(C5_GPIO_Post, C5_GPIO_Pin, RESET);
+		HAL_GPIO_WritePin(C5_GPIO_Post, C5_GPIO_Pin, SET);
 		break;
 	case 6:
-		HAL_GPIO_WritePin(C6_GPIO_Post, C6_GPIO_Pin, RESET);
+		HAL_GPIO_WritePin(C6_GPIO_Post, C6_GPIO_Pin, SET);
 		break;
 	case 7:
-		HAL_GPIO_WritePin(C7_GPIO_Post, C7_GPIO_Pin, RESET);
+		HAL_GPIO_WritePin(C7_GPIO_Post, C7_GPIO_Pin, SET);
 		break;
 	case 8:
-		HAL_GPIO_WritePin(C8_GPIO_Post, C8_GPIO_Pin, RESET);
+		HAL_GPIO_WritePin(C8_GPIO_Post, C8_GPIO_Pin, SET);
 		break;
 	case 9:
-		HAL_GPIO_WritePin(C9_GPIO_Post, C9_GPIO_Pin, RESET);
+		HAL_GPIO_WritePin(C9_GPIO_Post, C9_GPIO_Pin, SET);
 		break;
 	case 10:
-		HAL_GPIO_WritePin(C10_GPIO_Post, C10_GPIO_Pin, RESET);
+		HAL_GPIO_WritePin(C10_GPIO_Post, C10_GPIO_Pin, SET);
 		break;
 	case 11:
-		HAL_GPIO_WritePin(C11_GPIO_Post, C11_GPIO_Pin, RESET);
+		HAL_GPIO_WritePin(C11_GPIO_Post, C11_GPIO_Pin, SET);
 		break;
 	case 0:
-		HAL_GPIO_WritePin(C12_GPIO_Post, C12_GPIO_Pin, RESET);
+		HAL_GPIO_WritePin(C12_GPIO_Post, C12_GPIO_Pin, SET);
 		break;
 
 
@@ -180,7 +180,7 @@ int main(void)
   int counter = 0;
   while (1)
   {
-	  clockSetAll(
+	  if (counter == 0 ) clockSetAll(
 	  	  	  	C1_GPIO_Port, C1_Pin,
   				C2_GPIO_Port, C2_Pin,
   				C3_GPIO_Port, C3_Pin,
