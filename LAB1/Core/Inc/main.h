@@ -58,10 +58,32 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define LED_RED_Pin GPIO_PIN_5
-#define LED_RED_GPIO_Port GPIOA
-#define LED_YELLOW_Pin GPIO_PIN_6
-#define LED_YELLOW_GPIO_Port GPIOA
+#define LED_RED_V_Pin GPIO_PIN_2
+#define LED_RED_V_GPIO_Port GPIOA
+#define LED_YELLOW_V_Pin GPIO_PIN_3
+#define LED_YELLOW_V_GPIO_Port GPIOA
+#define LED_GREEN_V_Pin GPIO_PIN_4
+#define LED_GREEN_V_GPIO_Port GPIOA
+#define LED_RED_H_Pin GPIO_PIN_5
+#define LED_RED_H_GPIO_Port GPIOA
+#define LED_YELLOW_H_Pin GPIO_PIN_6
+#define LED_YELLOW_H_GPIO_Port GPIOA
+#define LED_GREEN_H_Pin GPIO_PIN_7
+#define LED_GREEN_H_GPIO_Port GPIOA
+#define A_seg_Pin GPIO_PIN_0
+#define A_seg_GPIO_Port GPIOB
+#define B_seg_Pin GPIO_PIN_1
+#define B_seg_GPIO_Port GPIOB
+#define C_seg_Pin GPIO_PIN_2
+#define C_seg_GPIO_Port GPIOB
+#define D_seg_Pin GPIO_PIN_3
+#define D_seg_GPIO_Port GPIOB
+#define E_seg_Pin GPIO_PIN_4
+#define E_seg_GPIO_Port GPIOB
+#define F_seg_Pin GPIO_PIN_5
+#define F_seg_GPIO_Port GPIOB
+#define G_seg_Pin GPIO_PIN_6
+#define G_seg_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
