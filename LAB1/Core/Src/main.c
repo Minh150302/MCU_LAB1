@@ -49,6 +49,7 @@
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
+
 void display7SEG(int counter,
 		GPIO_TypeDef* a_seg_GPIO_Port, uint16_t a_seg_Pin,
 		GPIO_TypeDef* b_seg_GPIO_Port, uint16_t b_seg_Pin,
@@ -222,8 +223,10 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int counter = 0;
-  int counter_H = 0 ;
+  int counter = 1;
+
+  int counter_2 = 1;
+//  int counter_H = 0 ;
 //  int counter_V = 0 ;
   while (1)
   {
@@ -237,94 +240,194 @@ int main(void)
 //	  			F_seg_GPIO_Port, F_seg_Pin,
 //	  			G_seg_GPIO_Port, G_seg_Pin
 //	  		  );
-	  if(counter < 3){
-		  RED_LIGHT(
-				  LED_RED_H_GPIO_Port, LED_RED_H_Pin,
-				  LED_YELLOW_H_GPIO_Port, LED_YELLOW_H_Pin,
-				  LED_GREEN_H_GPIO_Port, LED_GREEN_H_Pin);
+//	  if(counter < 6){
+//		  RED_LIGHT(
+//				  LED_RED_H_GPIO_Port, LED_RED_H_Pin,
+//				  LED_YELLOW_H_GPIO_Port, LED_YELLOW_H_Pin,
+//				  LED_GREEN_H_GPIO_Port, LED_GREEN_H_Pin);
+//
+//		  if (counter_H == 0) counter_H = 5 ;
+//		  	  display7SEG(counter_H -- ,
+//		  	  			A_seg_GPIO_Port, A_seg_Pin,
+//		  	  			B_seg_GPIO_Port, B_seg_Pin,
+//		  	  			C_seg_GPIO_Port, C_seg_Pin,
+//		  	  			D_seg_GPIO_Port, D_seg_Pin,
+//		  	  			E_seg_GPIO_Port, E_seg_Pin,
+//		  	  			F_seg_GPIO_Port, F_seg_Pin,
+//		  	  			G_seg_GPIO_Port, G_seg_Pin
+//		  	  		  );
+//
+//
+//		  GREEN_LIGHT(
+//			  	  LED_RED_V_GPIO_Port, LED_RED_V_Pin,
+//			  	  LED_YELLOW_V_GPIO_Port, LED_YELLOW_V_Pin,
+//			  	  LED_GREEN_V_GPIO_Port, LED_GREEN_V_Pin);
+//	  }
+//	  else if(counter < 9 && counter >= 9){
+//		  RED_LIGHT(
+//				  LED_RED_H_GPIO_Port, LED_RED_H_Pin,
+//				  LED_YELLOW_H_GPIO_Port, LED_YELLOW_H_Pin,
+//				  LED_GREEN_H_GPIO_Port, LED_GREEN_H_Pin);
+//
+//		  	  display7SEG(counter_H --,
+//		  	  			A_seg_GPIO_Port, A_seg_Pin,
+//		  	  			B_seg_GPIO_Port, B_seg_Pin,
+//		  	  			C_seg_GPIO_Port, C_seg_Pin,
+//		  	  			D_seg_GPIO_Port, D_seg_Pin,
+//		  	  			E_seg_GPIO_Port, E_seg_Pin,
+//		  	  			F_seg_GPIO_Port, F_seg_Pin,
+//		  	  			G_seg_GPIO_Port, G_seg_Pin
+//		  	  		  );
+//
+//		  YELLOW_LIGHT(
+//				  LED_RED_V_GPIO_Port, LED_RED_V_Pin,
+//				  LED_YELLOW_V_GPIO_Port, LED_YELLOW_V_Pin,
+//				  LED_GREEN_V_GPIO_Port, LED_GREEN_V_Pin);
+//	  }
+//	  else if(counter < 9 && counter >= 10){
+//		  GREEN_LIGHT(
+//				  LED_RED_H_GPIO_Port, LED_RED_H_Pin,
+//				  LED_YELLOW_H_GPIO_Port, LED_YELLOW_H_Pin,
+//				  LED_GREEN_H_GPIO_Port, LED_GREEN_H_Pin);
+//		  if (counter_H == 0) counter_H = 3;
+//		  display7SEG(counter_H -- ,
+//		  		  	  			A_seg_GPIO_Port, A_seg_Pin,
+//		  		  	  			B_seg_GPIO_Port, B_seg_Pin,
+//		  		  	  			C_seg_GPIO_Port, C_seg_Pin,
+//		  		  	  			D_seg_GPIO_Port, D_seg_Pin,
+//		  		  	  			E_seg_GPIO_Port, E_seg_Pin,
+//		  		  	  			F_seg_GPIO_Port, F_seg_Pin,
+//		  		  	  			G_seg_GPIO_Port, G_seg_Pin
+//		  		  	  		  );
+//		  RED_LIGHT(
+//				  LED_RED_V_GPIO_Port, LED_RED_V_Pin,
+//				  LED_YELLOW_V_GPIO_Port, LED_YELLOW_V_Pin,
+//				  LED_GREEN_V_GPIO_Port, LED_GREEN_V_Pin);
+//	  }
+//	  else if(counter < 10 && counter >= 8){
+//		  YELLOW_LIGHT(
+//				  LED_RED_H_GPIO_Port, LED_RED_H_Pin,
+//				  LED_YELLOW_H_GPIO_Port, LED_YELLOW_H_Pin,
+//				  LED_GREEN_H_GPIO_Port, LED_GREEN_H_Pin);
+//		  if (counter_H == 0) counter_H = 2;
+//		  		  display7SEG(counter_H -- ,
+//		  		  		  	  			A_seg_GPIO_Port, A_seg_Pin,
+//		  		  		  	  			B_seg_GPIO_Port, B_seg_Pin,
+//		  		  		  	  			C_seg_GPIO_Port, C_seg_Pin,
+//		  		  		  	  			D_seg_GPIO_Port, D_seg_Pin,
+//		  		  		  	  			E_seg_GPIO_Port, E_seg_Pin,
+//		  		  		  	  			F_seg_GPIO_Port, F_seg_Pin,
+//		  		  		  	  			G_seg_GPIO_Port, G_seg_Pin
+//		  		  		  	  		  );
+//		  RED_LIGHT(
+//				  LED_RED_V_GPIO_Port, LED_RED_V_Pin,
+//				  LED_YELLOW_V_GPIO_Port, LED_YELLOW_V_Pin,
+//				  LED_GREEN_V_GPIO_Port, LED_GREEN_V_Pin);
+//		  if (counter >= 10 ) counter = 0;
+//	  }
+//	  else counter = 0;
 
-		  int counter_H = 5;
-		  	  display7SEG(counter_H ,
-		  	  			A_seg_GPIO_Port, A_seg_Pin,
-		  	  			B_seg_GPIO_Port, B_seg_Pin,
-		  	  			C_seg_GPIO_Port, C_seg_Pin,
-		  	  			D_seg_GPIO_Port, D_seg_Pin,
-		  	  			E_seg_GPIO_Port, E_seg_Pin,
-		  	  			F_seg_GPIO_Port, F_seg_Pin,
-		  	  			G_seg_GPIO_Port, G_seg_Pin
-		  	  		  );
 
 
+	  if(counter < 6){
+		  		  RED_LIGHT(
+		  				  LED_RED_H_GPIO_Port, LED_RED_H_Pin,
+		  				  LED_YELLOW_H_GPIO_Port, LED_YELLOW_H_Pin,
+		  				  LED_GREEN_H_GPIO_Port, LED_GREEN_H_Pin);
+		  		  display7SEG(6 - counter,
+		  				  A_seg_GPIO_Port, A_seg_Pin,
+		  				  	  			B_seg_GPIO_Port, B_seg_Pin,
+		  				  	  			C_seg_GPIO_Port, C_seg_Pin,
+		  				  	  			D_seg_GPIO_Port, D_seg_Pin,
+		  				  	  			E_seg_GPIO_Port, E_seg_Pin,
+		  				  	  			F_seg_GPIO_Port, F_seg_Pin,
+		  				  	  			G_seg_GPIO_Port, G_seg_Pin
+		  				  	  );
+	  }
+	  else if (counter < 9 ){
+		  		  GREEN_LIGHT(
+		  				  LED_RED_H_GPIO_Port, LED_RED_H_Pin,
+		  				  LED_YELLOW_H_GPIO_Port, LED_YELLOW_H_Pin,
+		  				  LED_GREEN_H_GPIO_Port, LED_GREEN_H_Pin);
+		  		display7SEG(9 - counter,
+		  				  				  	A_seg_GPIO_Port, A_seg_Pin,
+		  				  				  	B_seg_GPIO_Port, B_seg_Pin,
+		  				  				  	C_seg_GPIO_Port, C_seg_Pin,
+		  				  				  	D_seg_GPIO_Port, D_seg_Pin,
+		  				  				  	E_seg_GPIO_Port, E_seg_Pin,
+		  				  				  	F_seg_GPIO_Port, F_seg_Pin,
+		  				  				  	G_seg_GPIO_Port, G_seg_Pin
+		  				  				  	  );
+	  }
+	  else if (counter < 11){
+		  		  YELLOW_LIGHT(
+		  				  LED_RED_H_GPIO_Port, LED_RED_H_Pin,
+		  				  LED_YELLOW_H_GPIO_Port, LED_YELLOW_H_Pin,
+		  				  LED_GREEN_H_GPIO_Port, LED_GREEN_H_Pin);
+		  		display7SEG(11 - counter,
+		  				  				  	A_seg_GPIO_Port, A_seg_Pin,
+		  				  				  	B_seg_GPIO_Port, B_seg_Pin,
+		  				  				  	C_seg_GPIO_Port, C_seg_Pin,
+		  				  				  	D_seg_GPIO_Port, D_seg_Pin,
+		  				  				  	E_seg_GPIO_Port, E_seg_Pin,
+		  				  				  	F_seg_GPIO_Port, F_seg_Pin,
+		  				  				  	G_seg_GPIO_Port, G_seg_Pin
+		  				  				  				  	  );
+		  		if (counter_2 == 10) counter = 1;
+	  }
+
+
+
+	  if(counter_2 < 4){
 		  GREEN_LIGHT(
-			  	  LED_RED_V_GPIO_Port, LED_RED_V_Pin,
-			  	  LED_YELLOW_V_GPIO_Port, LED_YELLOW_V_Pin,
-			  	  LED_GREEN_V_GPIO_Port, LED_GREEN_V_Pin);
+		  			  	  LED_RED_V_GPIO_Port, LED_RED_V_Pin,
+		  			  	  LED_YELLOW_V_GPIO_Port, LED_YELLOW_V_Pin,
+		  			  	  LED_GREEN_V_GPIO_Port, LED_GREEN_V_Pin);
+		  				  	  display7SEG(4 - counter_2,
+		  				  	  			A_seg2_GPIO_Port, A_seg2_Pin,
+		  				  	  			B_seg2_GPIO_Port, B_seg2_Pin,
+		  				  	  			C_seg2_GPIO_Port, C_seg2_Pin,
+		  				  	  			D_seg2_GPIO_Port, D_seg2_Pin,
+		  				  	  			E_seg2_GPIO_Port, E_seg2_Pin,
+		  				  	  			F_seg2_GPIO_Port, F_seg2_Pin,
+		  				  	  			G_seg2_GPIO_Port, G_seg2_Pin
+		  				  	  );
 	  }
-	  else if(counter < 5){
-		  RED_LIGHT(
-				  LED_RED_H_GPIO_Port, LED_RED_H_Pin,
-				  LED_YELLOW_H_GPIO_Port, LED_YELLOW_H_Pin,
-				  LED_GREEN_H_GPIO_Port, LED_GREEN_H_Pin);
-
-		  	  display7SEG(counter_H,
-		  	  			A_seg_GPIO_Port, A_seg_Pin,
-		  	  			B_seg_GPIO_Port, B_seg_Pin,
-		  	  			C_seg_GPIO_Port, C_seg_Pin,
-		  	  			D_seg_GPIO_Port, D_seg_Pin,
-		  	  			E_seg_GPIO_Port, E_seg_Pin,
-		  	  			F_seg_GPIO_Port, F_seg_Pin,
-		  	  			G_seg_GPIO_Port, G_seg_Pin
-		  	  		  );
-
+	  else if (counter_2 < 6 ){
 		  YELLOW_LIGHT(
-				  LED_RED_V_GPIO_Port, LED_RED_V_Pin,
-				  LED_YELLOW_V_GPIO_Port, LED_YELLOW_V_Pin,
-				  LED_GREEN_V_GPIO_Port, LED_GREEN_V_Pin);
+		  				  LED_RED_V_GPIO_Port, LED_RED_V_Pin,
+		  				  LED_YELLOW_V_GPIO_Port, LED_YELLOW_V_Pin,
+		  				  LED_GREEN_V_GPIO_Port, LED_GREEN_V_Pin);
+		  		display7SEG(6 - counter_2,
+			  	  			A_seg2_GPIO_Port, A_seg2_Pin,
+			  	  			B_seg2_GPIO_Port, B_seg2_Pin,
+			  	  			C_seg2_GPIO_Port, C_seg2_Pin,
+			  	  			D_seg2_GPIO_Port, D_seg2_Pin,
+			  	  			E_seg2_GPIO_Port, E_seg2_Pin,
+			  	  			F_seg2_GPIO_Port, F_seg2_Pin,
+			  	  			G_seg2_GPIO_Port, G_seg2_Pin
+		  				  				  	  );
 	  }
-	  else if(counter < 8){
-		  GREEN_LIGHT(
-				  LED_RED_H_GPIO_Port, LED_RED_H_Pin,
-				  LED_YELLOW_H_GPIO_Port, LED_YELLOW_H_Pin,
-				  LED_GREEN_H_GPIO_Port, LED_GREEN_H_Pin);
-		  int counter_H = 3;
-		  display7SEG(counter_H ,
-		  		  	  			A_seg_GPIO_Port, A_seg_Pin,
-		  		  	  			B_seg_GPIO_Port, B_seg_Pin,
-		  		  	  			C_seg_GPIO_Port, C_seg_Pin,
-		  		  	  			D_seg_GPIO_Port, D_seg_Pin,
-		  		  	  			E_seg_GPIO_Port, E_seg_Pin,
-		  		  	  			F_seg_GPIO_Port, F_seg_Pin,
-		  		  	  			G_seg_GPIO_Port, G_seg_Pin
-		  		  	  		  );
+	  else if (counter_2 < 11){
 		  RED_LIGHT(
-				  LED_RED_V_GPIO_Port, LED_RED_V_Pin,
-				  LED_YELLOW_V_GPIO_Port, LED_YELLOW_V_Pin,
-				  LED_GREEN_V_GPIO_Port, LED_GREEN_V_Pin);
+		  				  LED_RED_V_GPIO_Port, LED_RED_V_Pin,
+		  				  LED_YELLOW_V_GPIO_Port, LED_YELLOW_V_Pin,
+		  				  LED_GREEN_V_GPIO_Port, LED_GREEN_V_Pin);
+		  		display7SEG(11 - counter_2,
+			  	  			A_seg2_GPIO_Port, A_seg2_Pin,
+			  	  			B_seg2_GPIO_Port, B_seg2_Pin,
+			  	  			C_seg2_GPIO_Port, C_seg2_Pin,
+			  	  			D_seg2_GPIO_Port, D_seg2_Pin,
+			  	  			E_seg2_GPIO_Port, E_seg2_Pin,
+			  	  			F_seg2_GPIO_Port, F_seg2_Pin,
+			  	  			G_seg2_GPIO_Port, G_seg2_Pin
+		  				  );
+		  if (counter_2 == 10) counter = 1;
 	  }
-	  else if(counter < 10){
-		  YELLOW_LIGHT(
-				  LED_RED_H_GPIO_Port, LED_RED_H_Pin,
-				  LED_YELLOW_H_GPIO_Port, LED_YELLOW_H_Pin,
-				  LED_GREEN_H_GPIO_Port, LED_GREEN_H_Pin);
-		  int counter_H = 2;
-		  		  display7SEG(counter_H ,
-		  		  		  	  			A_seg_GPIO_Port, A_seg_Pin,
-		  		  		  	  			B_seg_GPIO_Port, B_seg_Pin,
-		  		  		  	  			C_seg_GPIO_Port, C_seg_Pin,
-		  		  		  	  			D_seg_GPIO_Port, D_seg_Pin,
-		  		  		  	  			E_seg_GPIO_Port, E_seg_Pin,
-		  		  		  	  			F_seg_GPIO_Port, F_seg_Pin,
-		  		  		  	  			G_seg_GPIO_Port, G_seg_Pin
-		  		  		  	  		  );
-		  RED_LIGHT(
-				  LED_RED_V_GPIO_Port, LED_RED_V_Pin,
-				  LED_YELLOW_V_GPIO_Port, LED_YELLOW_V_Pin,
-				  LED_GREEN_V_GPIO_Port, LED_GREEN_V_Pin);
-		  if (counter == 9) counter = 0;
-	  }
-	  else counter = 0;
 
-	  counter_H--;
+
+
+	  counter_2 ++;
 	  counter ++;
 	  HAL_Delay(1000);
 
@@ -388,8 +491,10 @@ static void MX_GPIO_Init(void)
                           |LED_YELLOW_H_Pin|LED_GREEN_H_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, A_seg_Pin|B_seg_Pin|C_seg_Pin|D_seg_Pin
-                          |E_seg_Pin|F_seg_Pin|G_seg_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, A_seg_Pin|B_seg_Pin|C_seg_Pin|D_seg2_Pin
+                          |E_seg2_Pin|F_seg2_Pin|G_seg2_Pin|D_seg_Pin
+                          |E_seg_Pin|F_seg_Pin|G_seg_Pin|A_seg2_Pin
+                          |B_seg2_Pin|C_seg2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : LED_RED_V_Pin LED_YELLOW_V_Pin LED_GREEN_V_Pin LED_RED_H_Pin
                            LED_YELLOW_H_Pin LED_GREEN_H_Pin */
@@ -400,10 +505,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : A_seg_Pin B_seg_Pin C_seg_Pin D_seg_Pin
-                           E_seg_Pin F_seg_Pin G_seg_Pin */
-  GPIO_InitStruct.Pin = A_seg_Pin|B_seg_Pin|C_seg_Pin|D_seg_Pin
-                          |E_seg_Pin|F_seg_Pin|G_seg_Pin;
+  /*Configure GPIO pins : A_seg_Pin B_seg_Pin C_seg_Pin D_seg2_Pin
+                           E_seg2_Pin F_seg2_Pin G_seg2_Pin D_seg_Pin
+                           E_seg_Pin F_seg_Pin G_seg_Pin A_seg2_Pin
+                           B_seg2_Pin C_seg2_Pin */
+  GPIO_InitStruct.Pin = A_seg_Pin|B_seg_Pin|C_seg_Pin|D_seg2_Pin
+                          |E_seg2_Pin|F_seg2_Pin|G_seg2_Pin|D_seg_Pin
+                          |E_seg_Pin|F_seg_Pin|G_seg_Pin|A_seg2_Pin
+                          |B_seg2_Pin|C_seg2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
