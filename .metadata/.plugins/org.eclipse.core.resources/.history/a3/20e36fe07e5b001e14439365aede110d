@@ -62,9 +62,7 @@ setNumberOnClock(int counter,
 				GPIO_TypeDef* C10_GPIO_Post, uint16_t C10_GPIO_Pin,
 				GPIO_TypeDef* C11_GPIO_Post, uint16_t C11_GPIO_Pin,
 				GPIO_TypeDef* C12_GPIO_Post, uint16_t C12_GPIO_Pin){
-	switch (counter){
 
-	}
 }
 /* USER CODE END PFP */
 

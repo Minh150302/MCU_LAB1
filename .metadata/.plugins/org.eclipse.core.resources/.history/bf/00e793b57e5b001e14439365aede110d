@@ -49,23 +49,7 @@
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
-setNumberOnClock(int counter,
-		GPIO_TypeDef* C1_GPIO_Post, uint16_t C1_GPIO_Pin,
-				GPIO_TypeDef* C2_GPIO_Post, uint16_t C2_GPIO_Pin,
-				GPIO_TypeDef* C3_GPIO_Post, uint16_t C3_GPIO_Pin,
-				GPIO_TypeDef* C4_GPIO_Post, uint16_t C4_GPIO_Pin,
-				GPIO_TypeDef* C5_GPIO_Post, uint16_t C5_GPIO_Pin,
-				GPIO_TypeDef* C6_GPIO_Post, uint16_t C6_GPIO_Pin,
-				GPIO_TypeDef* C7_GPIO_Post, uint16_t C7_GPIO_Pin,
-				GPIO_TypeDef* C8_GPIO_Post, uint16_t C8_GPIO_Pin,
-				GPIO_TypeDef* C9_GPIO_Post, uint16_t C9_GPIO_Pin,
-				GPIO_TypeDef* C10_GPIO_Post, uint16_t C10_GPIO_Pin,
-				GPIO_TypeDef* C11_GPIO_Post, uint16_t C11_GPIO_Pin,
-				GPIO_TypeDef* C12_GPIO_Post, uint16_t C12_GPIO_Pin){
-	switch (counter){
 
-	}
-}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -164,16 +148,10 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, C1_Pin|C2_Pin|C3_Pin|C4_Pin
-                          |C5_Pin|C6_Pin|C7_Pin|C8_Pin
-                          |C9_Pin|C10_Pin|C11_Pin|C12_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, LED_RED_Pin|LED_YELLOW_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : C1_Pin C2_Pin C3_Pin C4_Pin
-                           C5_Pin C6_Pin C7_Pin C8_Pin
-                           C9_Pin C10_Pin C11_Pin C12_Pin */
-  GPIO_InitStruct.Pin = C1_Pin|C2_Pin|C3_Pin|C4_Pin
-                          |C5_Pin|C6_Pin|C7_Pin|C8_Pin
-                          |C9_Pin|C10_Pin|C11_Pin|C12_Pin;
+  /*Configure GPIO pins : LED_RED_Pin LED_YELLOW_Pin */
+  GPIO_InitStruct.Pin = LED_RED_Pin|LED_YELLOW_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
