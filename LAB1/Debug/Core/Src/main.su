@@ -1,0 +1,7 @@
+main.c:53:6:RED_LIGHT	24	static
+main.c:62:6:YELLOW_LIGHT	24	static
+main.c:71:6:GREEN_LIGHT	24	static
+main.c:92:5:main	24	static
+main.c:182:6:SystemClock_Config	72	static
+main.c:218:13:MX_GPIO_Init	32	static
+main.c:254:6:Error_Handler	4	static,ignoring_inline_asm
