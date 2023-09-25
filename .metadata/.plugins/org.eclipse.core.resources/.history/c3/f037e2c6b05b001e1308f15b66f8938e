@@ -207,6 +207,7 @@ int main(void)
 			  E_seg_GPIO_Port, E_seg_Pin,
 			  F_seg_GPIO_Port, F_seg_Pin,
 			  G_seg_GPIO_Port, G_seg_Pin);
+
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 

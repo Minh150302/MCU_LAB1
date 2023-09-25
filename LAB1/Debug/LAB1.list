@@ -35,15 +35,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_ranges 00000350  00000000  00000000  000243b0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  000155c3  00000000  00000000  00024700  2**0
+ 16 .debug_macro  00015593  00000000  00000000  00024700  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00005152  00000000  00000000  00039cc3  2**0
+ 17 .debug_line   00005150  00000000  00000000  00039c93  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00079a7f  00000000  00000000  0003ee15  2**0
+ 18 .debug_str    0007999d  00000000  00000000  0003ede3  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000b8894  2**0
+ 19 .comment      00000053  00000000  00000000  000b8780  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00000d58  00000000  00000000  000b88e8  2**2
+ 20 .debug_frame  00000d58  00000000  00000000  000b87d4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -646,11 +646,11 @@ int main(void)
  8000564:	2201      	movs	r2, #1
  8000566:	4904      	ldr	r1, [pc, #16]	; (8000578 <main+0x68>)
  8000568:	f7ff fdf0 	bl	800014c <display7SEG>
+			  C_seg_GPIO_Port, C_seg_Pin,
 			  D_seg_GPIO_Port, D_seg_Pin,
 			  E_seg_GPIO_Port, E_seg_Pin,
 			  F_seg_GPIO_Port, F_seg_Pin,
 			  G_seg_GPIO_Port, G_seg_Pin);
-
 	  HAL_Delay(1000);
  800056c:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8000570:	f000 f980 	bl	8000874 <HAL_Delay>
@@ -791,12 +791,11 @@ static void MX_GPIO_Init(void)
  8000636:	683b      	ldr	r3, [r7, #0]
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LED_RED_V_Pin|LED_YELLOW_V_Pin|LED_GREEN_V_Pin|LED_RED_H_Pin
+  HAL_GPIO_WritePin(GPIOA, LED_RED_Pin|LED_YELLOW_Pin, GPIO_PIN_RESET);
  8000638:	2200      	movs	r2, #0
- 800063a:	21fc      	movs	r1, #252	; 0xfc
+ 800063a:	2160      	movs	r1, #96	; 0x60
  800063c:	4814      	ldr	r0, [pc, #80]	; (8000690 <MX_GPIO_Init+0x9c>)
  800063e:	f000 fb9b 	bl	8000d78 <HAL_GPIO_WritePin>
-                          |LED_YELLOW_H_Pin|LED_GREEN_H_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, A_seg_Pin|B_seg_Pin|C_seg_Pin|D_seg_Pin
@@ -806,12 +805,10 @@ static void MX_GPIO_Init(void)
  8000648:	f000 fb96 	bl	8000d78 <HAL_GPIO_WritePin>
                           |E_seg_Pin|F_seg_Pin|G_seg_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : LED_RED_V_Pin LED_YELLOW_V_Pin LED_GREEN_V_Pin LED_RED_H_Pin
-                           LED_YELLOW_H_Pin LED_GREEN_H_Pin */
-  GPIO_InitStruct.Pin = LED_RED_V_Pin|LED_YELLOW_V_Pin|LED_GREEN_V_Pin|LED_RED_H_Pin
- 800064c:	23fc      	movs	r3, #252	; 0xfc
+  /*Configure GPIO pins : LED_RED_Pin LED_YELLOW_Pin */
+  GPIO_InitStruct.Pin = LED_RED_Pin|LED_YELLOW_Pin;
+ 800064c:	2360      	movs	r3, #96	; 0x60
  800064e:	60bb      	str	r3, [r7, #8]
-                          |LED_YELLOW_H_Pin|LED_GREEN_H_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
  8000650:	2301      	movs	r3, #1
  8000652:	60fb      	str	r3, [r7, #12]
